@@ -1,4 +1,4 @@
-class Request {
+export class Request {
   constructor(ipAddress, path) {
     this.ipAddress = ipAddress
     this.path = path

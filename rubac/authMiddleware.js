@@ -1,5 +1,5 @@
-import {RuBACService} from './rubac-service'
-import { User, Request } from './models'
+import {RuBACService} from './rubac-service.js'
+import { User, Request } from './models/index.js'
 
 const ACCESS_GRANTED_MESSAGE = { message: 'Access granted' }
 const ACCESS_DENIED_MESSAGE = { message: 'You shall not pass' }

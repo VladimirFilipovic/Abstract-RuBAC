@@ -1,4 +1,4 @@
-import * as userRoles from './user-roles.json'
+import {userRoles} from './user-roles.js'
 
 
 export class User {
