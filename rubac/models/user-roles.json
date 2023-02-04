@@ -1,0 +1,15 @@
+[
+    {
+      "id": "1",
+      "roles": ["admin"]
+    },
+    {
+      "id": "2",
+      "roles": ["super-admin"]
+    },
+    {
+      "id": "3",
+      "roles": ["visitor"]
+    }
+  ]
+  

@@ -1,13 +1,9 @@
 import express from 'express'
-import {RuBACService} from './rubac/rubac-service.js'
+import { accessCheckMiddleware } from './rubac'
 
 const app = express()
 const port = 3000
 
-const rubacMiddleware = (req, res, next) => {
-  const rubacService = new RuBACService()
-}
-
-app.use(rubacMiddleware)
+app.use(accessCheckMiddleware)
 
 app.listen(port, () => console.log('server is running'))
