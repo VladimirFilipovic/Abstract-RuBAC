@@ -1,8 +1,28 @@
 [
     {
-
+      "Path": "/platform/*",
+      "Rules": [
+        {
+          "RuleName": "Allow only specific IP",
+          "Expression": "$ip_address == '100.100.100.100'"
+        },
+        {
+          "RuleName": "Check role",
+          "Expression": "$user_role == 'ADMIN'"
+        }
+      ]
     },
     {
-        
+      "Path": "/admin/*",
+      "Rules": [
+        {
+          "RuleName": "Allow only specific IP",
+          "Expression": "ip_range($ip_address, '100.100.100.1/28')"
+        },
+        {
+          "RuleName": "Check role",
+          "Expression": "in($user_role, 'ADMIN', 'SUPER_ADMIN')"
+        }
+      ]
     }
 ]
