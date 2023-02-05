@@ -18,6 +18,7 @@ export class RuBACService {
       return true
     }
 
+    
     return this.#getPathRulesEvaluation({
       pathRules,
       request,

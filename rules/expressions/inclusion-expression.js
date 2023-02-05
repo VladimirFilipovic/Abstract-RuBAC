@@ -11,6 +11,9 @@ export class InclusionExpression extends Expression {
   }
 
   evaluate() {
-    throw new Error('Method \'execute()\' must be implemented.')
+    return !!this.expected.find(
+      (expectedValue) =>
+        expectedValue.toLowerCase() === this.value.toLowerCase()
+    )
   }
 }

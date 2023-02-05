@@ -11,6 +11,6 @@ export class ComparisonExpression extends Expression {
   }
 
   evaluate() {
-    throw new Error('Method \'execute()\' must be implemented.')
+    return this.value.toLowerCase() === this.expected.toLowerCase()
   }
 }

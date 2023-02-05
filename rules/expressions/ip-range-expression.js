@@ -1,4 +1,5 @@
 import { Expression } from './expression-base.js'
+import ipRangeCheck from 'ip-range-check'
 
 /** Expression defined by keyword **ip_range**
  *  
@@ -11,6 +12,6 @@ export class IpRangeExpression extends Expression {
   }
 
   evaluate() {
-    throw new Error('Method \'execute()\' must be implemented.')
+    return ipRangeCheck(this.value, this.expected)
   }
 }
