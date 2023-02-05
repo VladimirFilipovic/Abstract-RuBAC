@@ -1,13 +1,13 @@
 export const tokenTypes = {
   InclusionOperator: 'InclusionOperator',
   RangeOperator: 'RangeOperator',
-  ComparisonEqualsOperator: "ComparisonEqualsOperator",
+  ComparisonEqualsOperator: 'ComparisonEqualsOperator',
   UserRolePlaceholderValue: 'UserRolePlaceholderValue',
   IpAddressPlaceholderValue: 'IpAddressPlaceholderValue',
   IpAddressWithCIDR: 'IpAddressWithCIDR',
   ExpectedValue: 'ExpectedValue',
   ClosedParenthesis: 'ClosedParenthesis',
-  OpenParenthesis: 'ClosedParenthesis',
+  OpenParenthesis: 'OpenParenthesis',
 }
 
 const tokenRegex = {
@@ -35,7 +35,7 @@ export class Token {
       }
     }
 
-    if(!this.type) {
+    if (!this.type) {
       throw new Error(
         `Invalid token value: ${this.text} at index: ${this.index}`
       )

@@ -1,5 +1,9 @@
-import { Expression } from './expression.js'
+import { Expression } from './expression-base.js'
 
+/** Expression defined by **equals operator**
+ *  
+ *  For example: $ip_address == '100.100.100.100'
+ */
 export class ComparisonExpression extends Expression {
   
   constructor(value, expected) {
