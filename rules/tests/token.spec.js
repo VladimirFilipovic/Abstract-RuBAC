@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Token, tokenTypes} from '../parsing/token.js'
 
 describe('Token tests',() => {
