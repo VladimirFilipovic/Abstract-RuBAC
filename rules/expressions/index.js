@@ -1,3 +1,3 @@
-export {ComparisonExpression} from './comparison-expression'
-export {InclusionExpression} from './inclusion-expression'
-export {IpRangeExpression} from './ip-range-expression'
+export {ComparisonExpression} from './comparison-expression.js'
+export {InclusionExpression} from './inclusion-expression.js'
+export {IpRangeExpression} from './ip-range-expression.js'

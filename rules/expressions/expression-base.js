@@ -5,7 +5,7 @@ export class Expression {
     this.expected = expected
   }
 
-  execute() {
+  evaluate() {
     throw new Error('Method \'execute()\' must be implemented.')
   }
 }

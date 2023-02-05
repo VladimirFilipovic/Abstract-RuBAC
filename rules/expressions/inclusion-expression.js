@@ -10,7 +10,7 @@ export class InclusionExpression extends Expression {
     super(value, expected)
   }
 
-  execute() {
+  evaluate() {
     throw new Error('Method \'execute()\' must be implemented.')
   }
 }
