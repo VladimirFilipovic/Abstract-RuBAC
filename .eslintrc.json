@@ -33,6 +33,13 @@
     "space-infix-ops": "error",
     "space-unary-ops": "error",
     "quotes": ["error", "single"],
+    "no-restricted-syntax": [
+      "error",
+      {
+          "selector": ":matches(PropertyDefinition, MethodDefinition)[accessibility=\"private\"]",
+          "message": "Use #private instead",
+      },
+    ],
     //
     "max-len": ["error", { "code": 200 }],
     "max-lines": ["error", { "max": 500 }],
