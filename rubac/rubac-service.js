@@ -28,13 +28,13 @@ export class RuBACService {
     const rulesData = await readFile(FILE_LOCATION)
     const rules = JSON.parse(rulesData.toString())
 
-    const pathWithRules = rules.filter(({ Path }) => {
-      const pathName = Path.split('*')[0]
+    const pathsWithRules = rules.filter(({ Path }) => {
+      const pathName = Path.split('/*')[0]
       return requestPath.includes(pathName)
     })
 
-    if (pathWithRules) {
-      return pathWithRules.reduce((rules, currRules) => {
+    if (pathsWithRules) {
+      return pathsWithRules.reduce((rules, currRules) => {
         rules.push(...currRules.Rules)
         return rules
       }, [])

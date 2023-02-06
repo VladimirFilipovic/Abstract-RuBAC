@@ -92,7 +92,7 @@ export class ExpressionParser {
     }
 
     const value =
-      currentToken.getType() === tokenTypes.UserRolePlaceholderValue ? this.user.getRoles() : this.request.getIpAddress()
+      currentToken.getType() === tokenTypes.UserRolePlaceholderValue ? this.user.getRole() : this.request.getIpAddress()
 
     while (currentToken.getType() !== tokenTypes.ClosedParenthesis) {
         
@@ -128,7 +128,7 @@ export class ExpressionParser {
 
     while (!this.#isEndOfExpression()) {
      
-      if (currentToken.getType() !== tokenTypes.IpAddressWithCIDR) {
+      if (currentToken.getType() === tokenTypes.IpAddressWithCIDR) {
         expectedValue = currentToken.getValue() 
       }
 
@@ -156,7 +156,7 @@ export class ExpressionParser {
     let currentToken = this.#getCurrentToken()
 
     const value =
-      currentToken.getType() === tokenTypes.UserRolePlaceholderValue ? this.user.getRoles() : this.request.getIpAddress()
+      currentToken.getType() === tokenTypes.UserRolePlaceholderValue ? this.user.getRole() : this.request.getIpAddress()
     
 
     while (currentToken.getType() !== tokenTypes.ExpectedValue) {

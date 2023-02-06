@@ -48,6 +48,4 @@ describe('Expression evaluation tests', () => {
       expect(expression.evaluate()).toBe(false)
     }) 
   })
-
-
 })
