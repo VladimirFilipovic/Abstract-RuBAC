@@ -30,5 +30,6 @@ Primeri poziva servisa pomocu curl-a
 
 
         curl http://localhost:3000/platform/test
-
+        
+#### Napomena: Pokusao sam da smanjim mogucnost REDOS napada tako sto sam svaki korisceni regex proverio pomocu beslatnog alata
 
