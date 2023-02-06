@@ -20,7 +20,6 @@ describe('RuBAC service tests', () => {
     expect(isAccessGranted).toBe(true)
   })
 
-
   describe('WORKFLOW 1 - /platform tests', () => {
    
     it('Should allow access to /platform for ip: 100.100.100.100 and user:admin', async() => {
@@ -116,6 +115,5 @@ describe('RuBAC service tests', () => {
     
     expect(isAccessGranted).toBe(false)
   })
-  
   
 })

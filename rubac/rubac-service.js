@@ -2,6 +2,7 @@ import {readFile} from 'fs/promises'
 import * as path from 'path'
 import { ExpressionParser } from '../rules/index.js'
 
+const FILE_LOCATION = path.join('./rules/rules.json')
 
 export class RuBACService {
   
@@ -23,8 +24,6 @@ export class RuBACService {
   }
 
   async #getRulesFor(requestPath) {
-    const FILE_LOCATION = path.join(__dirname, '../rules/rules.json')
-  
     const rulesData = await readFile(FILE_LOCATION)
     const rules = JSON.parse(rulesData.toString())
 
