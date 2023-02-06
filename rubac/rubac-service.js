@@ -1,4 +1,3 @@
-import { text } from 'express'
 import {readFile} from 'fs/promises'
 import * as path from 'path'
 import { ExpressionParser } from '../rules/index.js'
@@ -12,13 +11,10 @@ export class RuBACService {
   async checkIfUserHasAccess(request, user) {
     const pathRules = await this.#getRulesFor(request.getPath())
 
-    const pathHasNoRules = pathRules?.length === 0
-    
-    if (pathHasNoRules) {
+    if (!pathRules?.length) {
       return true
     }
 
-    
     return this.#getPathRulesEvaluation({
       pathRules,
       request,
@@ -32,10 +28,16 @@ export class RuBACService {
     const rulesData = await readFile(FILE_LOCATION)
     const rules = JSON.parse(rulesData.toString())
 
-    const pathWithRules = rules.find(({Path}) => Path.includes(requestPath))
+    const pathWithRules = rules.filter(({ Path }) => {
+      const pathName = Path.split('*')[0]
+      return requestPath.includes(pathName)
+    })
 
     if (pathWithRules) {
-      return pathWithRules.Rules
+      return pathWithRules.reduce((rules, currRules) => {
+        rules.push(...currRules.Rules)
+        return rules
+      }, [])
     } else {
       return []
     }
@@ -44,8 +46,8 @@ export class RuBACService {
   #getPathRulesEvaluation({pathRules, user, request}) {
     let evaluationResult 
 
-    const ruleExpressions = pathRules.map(({Expression: expression}) => {
-      const expressionParser = new ExpressionParser(user, request, expression)
+    const ruleExpressions = pathRules.map((pathRule) => {
+      const expressionParser = new ExpressionParser(user, request, pathRule.Expression)
       return expressionParser.parse()
     })
 
