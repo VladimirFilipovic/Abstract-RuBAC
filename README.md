@@ -13,7 +13,7 @@ Aplikacija moze biti pokrenuta na dva nacina:
 
 Jest testovi mogu biti pokrenuti pomocu komande npm run test
 
-Testovi koji testiraju glavnu funckionalnost sistema nalaze se u [ovom fajlu](rubac\tests\rubac-service.spec.js)
+Testovi koji testiraju glavnu funckionalnost sistema nalaze se u [ovom fajlu](https://github.com/VladimirFilipovic/Abstract-RuBAC/blob/main/rubac/tests/rubac-service.spec.js)
 
 
 Primeri poziva servisa pomocu curl-a
